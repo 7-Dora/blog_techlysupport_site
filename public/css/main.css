@@ -322,7 +322,7 @@ a {
     left: -10%;
     width:  500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(1, 82, 187, 0.12) 0%, transparent 70%);
+    /*background: radial-gradient(circle, rgba(1, 82, 187, 0.12) 0%, transparent 70%);*/
     border-radius: var(--radius-full);
     animation: float 15s infinite ease-in-out reverse;
 }
