@@ -1,0 +1,17 @@
+/node_modules
+/public/hot
+/public/storage
+/public/sitemap.xml
+/public/de-sitemap.xml
+/public/en-sitemap.xml
+/public/fr-sitemap.xml
+/public/es-sitemap.xml
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+storage/framework/*

@@ -1,0 +1,26 @@
+.top-decription {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem
+}
+
+.category-card-first {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.category-card-second {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+@media (max-width: 540px) {
+    .category-card-first {
+        grid-template-columns: auto;
+        padding: 0 25px;
+    }
+    .category-card-second {
+        padding: 0 25px;
+    }
+}
