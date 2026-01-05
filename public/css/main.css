@@ -151,6 +151,9 @@ a {
 .nav-item {
     position: relative;
 }
+.nav-item:active {
+    background-color: #fff;
+}
 
 .nav-link {
     display: block;
@@ -179,7 +182,7 @@ a {
 .nav-link:hover,
 .nav-link.active {
     color: var(--primary-green);
-    /*background: var(--light-green);*/
+    background-color: #fff;
 }
 
 .nav-link:hover::before,
@@ -949,6 +952,7 @@ a {
 @media (max-width: 820px) {
     .blog-card-overlay .category {
         display: grid;
+        gap: 10px !important;
     }
     .navbar-toggler {
         display: block;
