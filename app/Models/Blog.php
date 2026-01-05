@@ -113,24 +113,24 @@ class Blog extends Model
         }
         return $faqData;
     }
-//    public function getContentAttribute() {
-//        $value = $this->attributes['content'] ?? null;
-//
-//        if ($value) {
-//            return str_replace('https://global-ec-1251174242.cos.ap-hongkong.myqcloud.com', '/image', $value);
-//        }
-//
-//        return $value;
-//    }
-//
-//    public function getHeadImgAttribute() {
-//        $value = $this->attributes['head_img'] ?? null;
-//
-//        if ($value) {
-//            return str_replace('https://global-ec-1251174242.cos.ap-hongkong.myqcloud.com', '/image', $value);
-//        }
-//
-//        return $value;
-//    }
+    public function getContentAttribute() {
+        $value = $this->attributes['content'] ?? null;
+
+        if ($value) {
+            return str_replace('https://global-ec-1251174242.cos.ap-hongkong.myqcloud.com', '/image', $value);
+        }
+
+        return $value;
+    }
+
+    public function getHeadImgAttribute() {
+        $value = $this->attributes['head_img'] ?? null;
+
+        if ($value) {
+            return str_replace('https://global-ec-1251174242.cos.ap-hongkong.myqcloud.com', '/image', $value);
+        }
+
+        return $value;
+    }
 
 }
