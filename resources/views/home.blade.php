@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', $seoInfo->seo_title ?? '')
-@section('description', $seoInfo->seo_desc ?? '')
+@section('title', $seoInfo->seo_title)
+@section('description', $seoInfo->seo_desc)
 
 @push('styles')
     <link rel="stylesheet" href="/css/home.css?v=1.2">
@@ -53,7 +53,7 @@
                     <div class="flex-grow-1">
                         <div class="home-right-card">
                             <a href="{{ $hotBlog->category->url }}">
-                                <span class="badge {{ \App\Models\Category::buttonClass($hotBlog->category->slug) }}  mb-2">{{ $hotBlog->category_name }}</span>
+                                <span class="badge button-green mb-2">{{ $hotBlog->category_name }}</span>
                             </a>
                             <small class="text-muted card-date">{{ $hotBlog->published_at->format('d M Y') }}</small>
                         </div>
@@ -156,7 +156,7 @@
                                 <div class="flex-grow-1">
                                     <div class="home-right-card">
                                         <a href="{{ $hotBlog->category->url }}">
-                                            <span class="badge {{ \App\Models\Category::buttonClass($hotBlog->category->slug) }}  mb-2">{{ $hotBlog->category_name }}</span>
+                                            <span class="badge button-green  mb-2">{{ $hotBlog->category_name }}</span>
                                         </a>
                                         <small class="text-muted card-date">{{ $hotBlog->published_at->format('d M Y') }}</small>
                                     </div>
@@ -182,7 +182,7 @@
             <div class="col-md-6 mb-3">
                 <div class="align-items-center border rounded-3 p-3 hover-shadow">
                     <div class="latest-card">
-                        <a href="{{ $latestBlog->category->url }}"><span class="badge {{ \App\Models\Category::buttonClass($latestBlog->category->slug) }} mb-2">{{ $latestBlog->category_name }}</span></a>
+                        <a href="{{ $latestBlog->category->url }}"><span class="badge button-green mb-2">{{ $latestBlog->category_name }}</span></a>
                         <small class="text-muted">{{ $latestBlog->published_at->format('d M Y') }}</small>
                     </div>
                     <a href="{{ $latestBlog->url }}" class="text-decoration-none">

@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', $seoInfo->seo_title ?? '')
-@section('description', $seoInfo->seo_desc ?? '')
+@section('title', $seoInfo->seo_title)
+@section('description', $seoInfo->seo_desc)
 
 @push('styles')
     <link rel="stylesheet" href="/css/category.css?v=1.6">

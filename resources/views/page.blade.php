@@ -1,7 +1,7 @@
 @extends('layout')
 
-@section('title', $pageInfo->seo_title ?? '')
-@section('description', $pageInfo->seo_desc ?? '')
+@section('title', $pageInfo->seo_title)
+@section('description', $pageInfo->seo_desc)
 
 @push('styles')
     <link rel="stylesheet" href="/css/page.css?v=1.2">

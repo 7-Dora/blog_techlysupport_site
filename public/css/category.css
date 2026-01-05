@@ -83,7 +83,8 @@ main {
 }
 
 .pagination .active {
-    background: linear-gradient(120deg, #0152bb 0%, #0068e0 50%, #7dc02f 100%);
+    /*background: linear-gradient(120deg, #0152bb 0%, #0068e0 50%, #7dc02f 100%);*/
+    background-color: var(--primary-green);
     color: #fff;
     border-color: transparent;
     box-shadow: 0 4px 20px rgba(1, 82, 187, 0.3);

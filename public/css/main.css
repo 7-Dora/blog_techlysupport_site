@@ -7,13 +7,13 @@
 :root {
     /* 主色调 - 全新配色 */
     --primary-blue:  #0152bb;
-    --primary-green: #7dc02f;
+    --primary-green: #419519;
     --accent-blue: #0068e0;
     --accent-green: #a3e048;
 
     /* 深色调 - 更深邃 */
     --dark-blue:  #013d8f;
-    --dark-green:  #62a024;
+    --dark-green:  #419519;
     --text-dark: #1a1f2e;
     --text-darker: #0d1117;
 
@@ -26,13 +26,13 @@
     /* 功能色 */
     --border-color: #d8dde6;
     --shadow-light: rgba(1, 82, 187, 0.08);
-    --shadow-medium:  rgba(1, 82, 187, 0.15);
+    --shadow-medium:  #edf1e6;
     --shadow-heavy: rgba(1, 82, 187, 0.25);
 
     /* 渐变 - 更有活力 */
     --gradient-primary: linear-gradient(135deg, #0152bb 0%, #0068e0 100%);
     --gradient-secondary: linear-gradient(135deg, #7dc02f 0%, #a3e048 100%);
-    --gradient-mixed: linear-gradient(120deg, #0152bb 0%, #0068e0 50%, #7dc02f 100%);
+    --gradient-mixed: linear-gradient(22deg, #0152bb 0%, #0068e0 10%, #7dc02f 118%);
     --gradient-hero: linear-gradient(135deg, #e8f3ff 0%, #f2fce8 50%, #e8f3ff 100%);
 
     /* 字体 */
@@ -94,13 +94,17 @@ a {
     column-gap: 1.5rem;
 }
 
+.button-green {
+    background: var(--primary-green);
+    color: #fff;
+}
+
 .offset-lg-1 { margin-left: 0; }
 
 /* ==================== 导航栏 ==================== */
 .navbar {
     background: linear-gradient(to right, #FFFFFF 0%, #f8fbff 100%);
-    border-bottom: 3px solid transparent;
-    border-image: var(--gradient-mixed) 1;
+    border-bottom: 3px solid var(--primary-green);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -167,15 +171,15 @@ a {
     left: 50%;
     width: 0;
     height: 3px;
-    background: var(--gradient-mixed);
+    background: var(--primary-green);
     transform: translateX(-50%);
     transition: width var(--transition-base);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-blue);
-    background: var(--light-blue);
+    color: var(--primary-green);
+    /*background: var(--light-green);*/
 }
 
 .nav-link:hover::before,
@@ -189,7 +193,7 @@ a {
 }
 
 .language-selector .btn {
-    background: var(--gradient-mixed);
+    background: var(--primary-green);
     color: white;
     border: none;
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -215,7 +219,7 @@ a {
     right: 0;
     background: white;
     border-radius: var(--radius-md);
-    box-shadow: 0 8px 24px var(--shadow-medium);
+    /*box-shadow: 0 8px 24px var(--shadow-medium);*/
     min-width: 150px;
     padding: var(--spacing-sm) 0;
     opacity: 0;
@@ -244,8 +248,8 @@ a {
 }
 
 .dropdown-item:hover {
-    background: var(--light-blue);
-    color: var(--primary-blue);
+    background: var(--light-green);
+    color: var(--primary-green);
     padding-left: calc(var(--spacing-lg) + 8px);
 }
 
@@ -253,7 +257,7 @@ a {
 .navbar-toggler {
     display: none;
     background: none;
-    border: 2px solid var(--primary-blue);
+    border: 2px solid var(--primary-green);
     border-radius: var(--radius-sm);
     cursor: pointer;
     padding: 14px 4px;
@@ -263,7 +267,7 @@ a {
     display: block;
     width: 20px;
     height: 2px;
-    background: var(--primary-blue);
+    background: var(--primary-green);
     position: relative;
     transition: all var(--transition-base);
 }
@@ -274,7 +278,7 @@ a {
     position: absolute;
     width: 100%;
     height: 2px;
-    background: var(--primary-blue);
+    background: var(--primary-green);
     left: 0;
     transition: all var(--transition-base);
 }
@@ -334,7 +338,8 @@ a {
     margin-bottom: var(--spacing-lg);
     position: relative;
     z-index: 1;
-    background: var(--gradient-mixed);
+    /*background: var(--gradient-mixed);*/
+    background-color: #000;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -449,14 +454,14 @@ a {
 }
 
 .blog-card-badge {
-    background: var(--gradient-secondary);
+    background: var(--primary-green);
     color: white;
     padding: 4px 12px;
     border-radius:  var(--radius-lg);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(125, 192, 47, 0.5);
+    /*box-shadow: 0 2px 8px rgba(125, 192, 47, 0.5);*/
     margin:  0 20px 0 0;
 }
 
@@ -494,7 +499,7 @@ a {
 }
 
 .blog-card:hover .blog-card-title {
-    color: var(--primary-blue);
+    color: var(--primary-green);
 }
 
 .blog-card-text {
@@ -642,7 +647,7 @@ a {
 }
 
 .breadcrumb a {
-    color: var(--primary-blue);
+    color: var(--primary-green);
     text-decoration: none;
     transition: color var(--transition-fast);
     position: relative;
@@ -655,7 +660,7 @@ a {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-blue);
+    background: var(--primary-green);
     transition: width var(--transition-base);
 }
 
@@ -700,7 +705,7 @@ a {
     left:  0;
     right: 0;
     height: 4px;
-    background: var(--gradient-mixed);
+    background: var(--primary-green);
 }
 
 .footer .footer-title {
@@ -724,7 +729,7 @@ a {
 }
 
 .footer .footer-title i {
-    color: var(--primary-green);
+    color: var(--accent-green);
     margin-right: var(--spacing-sm);
 }
 
@@ -751,11 +756,11 @@ a {
     left: -20px;
     opacity: 0;
     transition: all var(--transition-base);
-    color: var(--primary-green);
+    color: var(--accent-green);
 }
 
 .footer a:hover {
-    color: var(--primary-green);
+    color: var(--accent-green);
     padding-left: 20px;
 }
 
@@ -852,7 +857,7 @@ a {
 }
 
 .h6:hover {
-    color: var(--primary-blue);
+    color: var(--primary-green);
 }
 
 .small {
@@ -877,7 +882,7 @@ a {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: var(--gradient-mixed);
+    background: var(--primary-green);
     color: #fff;
     border: none;
     border-radius: 50%;

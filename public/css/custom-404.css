@@ -4,10 +4,7 @@
 
 main {
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(135deg,
-    #0152bb 0%,
-    #0068e0 50%,
-    #7dc02f 100%);
+    background: linear-gradient(139deg, #0152bb 0%, #0068e0 5%, #7dc02f 97%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,7 +119,7 @@ main::after {
     display: inline-block;
     padding: 1rem 2.5rem;
     background: white;
-    color: #0152bb;
+    color: var(--primary-green);
     text-decoration:  none;
     border-radius:  50px;
     font-weight: 700;

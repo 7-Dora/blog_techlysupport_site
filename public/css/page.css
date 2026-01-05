@@ -41,10 +41,7 @@
     margin-bottom: 0.5rem;
 }
 .page-content a {
-    color: var(--primary-blue);
-}
-.page-content a:active {
-    color: var(--primary-blue);
+    color: var(--primary-green);
 }
 
 @media (max-width: 768px) {
