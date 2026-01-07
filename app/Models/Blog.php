@@ -89,30 +89,46 @@ class Blog extends Model
         if($this->content_faq) {
             $html = $this->content_faq;
 
-            // 匹配每个h3及其后面直到下一个h3或结尾的所有内容
-            $pattern = '/<h3>(.*?)<\/h3>\s*((?:<p>.*?<\/p>\s*)*)/s';
+            $pattern = '/<h3>(.*?)<\/h3>(.*?)(?=<h3>|$)/s';
 
             preg_match_all($pattern, $html, $matches, PREG_SET_ORDER);
 
+            $faqData = [];
             foreach ($matches as $match) {
                 $answers = '';
+                // 提取h3内的问题文本
                 $question = trim($match[1]);
+                // 提取h3后直到下一个h3/结尾的所有内容（包含p/ul）
                 $content = trim($match[2]);
-                // 提取所有p标签内容
+
+                // 提取p标签内的纯文本
                 if (preg_match_all('/<p>(.*?)<\/p>/s', $content, $pMatches)) {
                     $answers .= implode('', array_map('trim', $pMatches[1]));
-                } else {
-                    $answers = '';
+                }
+                // 补充提取ul标签内的纯文本（新增：适配ul标签）
+                if (preg_match_all('/<ul>(.*?)<\/ul>/s', $content, $ulMatches)) {
+                    $answers = $content;
+//                    // 进一步提取li标签内容（如果需要保留li文本）
+//                    foreach ($ulMatches[1] as $ulContent) {
+//                        if (preg_match_all('/<li>(.*?)<\/li>/s', $ulContent, $liMatches)) {
+//                            $answers .= implode(' ', array_map('trim', $liMatches[1]));
+//                        }
+//                    }
+                }
+                // 兜底：如果没有p/ul，直接用原始内容（去标签）
+                if (empty($answers)) {
+                    $answers = trim(strip_tags($content));
                 }
 
                 $faqData[] = [
                     'question' => $question,
-                    'answer' => $answers
+                    'answer' => $answers,
                 ];
             }
         }
         return $faqData;
     }
+
     public function getContentAttribute() {
         $value = $this->attributes['content'] ?? null;
 
