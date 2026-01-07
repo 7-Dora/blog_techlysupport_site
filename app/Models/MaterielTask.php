@@ -259,24 +259,24 @@ class MaterielTask extends Model
         return data_get($heroDesc, $locale, '');
     }
 
-    public static function quickLinks($locale) {
-        $quickLinks = [
-            'en' => 'Quick Links',
-            'de' => 'Schnelle Links',
-            'fr' => 'Liens Rapides',
-            'es' => 'Enlaces Rápidos',
+    public static function company($locale) {
+        $company = [
+            'en' => 'Company',
+            'de' => 'Unternehmen',
+            'fr' => 'Entreprise',
+            'es' => 'Empresa',
         ];
-        return data_get($quickLinks, $locale, '');
+        return data_get($company, $locale, '');
     }
 
-    public static function categoryName($locale) {
-        $categoryName = [
-            'en' => 'Categories',
-            'de' => 'Kategorien',
-            'fr' => 'Catégories',
-            'es' => 'Categorías',
+    public static function resource($locale) {
+        $resource = [
+            'en' => 'Resource',
+            'de' => 'Ressourcen',
+            'fr' => 'Ressources',
+            'es' => 'Recursos',
         ];
-        return data_get($categoryName, $locale, '');
+        return data_get($resource, $locale, '');
     }
 
     public static function legal($locale) {

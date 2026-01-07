@@ -432,6 +432,15 @@
 }
 
 /* ==================== 相关文章 ==================== */
+.related-posts .blog-card-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: unset;
+    overflow: hidden;
+}
+.blog-card-img-wrapper img:hover {
+    transform: scale(1.1) !important;
+}
 .related-post-card {
     transition: all var(--transition-base);
 }

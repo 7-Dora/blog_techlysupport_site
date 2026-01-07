@@ -138,16 +138,16 @@
     <footer class="footer">
         <div class="container message">
             <div>
-                <p class="footer-title"><i class="fas fa-gift"></i> {{ config('app.name') }}</p>
+                <p class="footer-title">{{ config('app.name') }}</p>
                 <p>{{ \App\Models\MaterielTask::slogan(app()->getLocale()) }}</p>
             </div>
 
             <div>
-                <p class="footer-title">{{ \App\Models\MaterielTask::quickLinks(app()->getLocale()) }}</p>
+                <p class="footer-title">{{ \App\Models\MaterielTask::company(app()->getLocale()) }}</p>
                 <ul class="list-unstyled">
                     <li><a href="{{ app()->getLocale() === 'en' ? '/' : '/'.app()->getLocale().'/'}}">{{ \App\Models\MaterielTask::home(app()->getLocale()) }}</a></li>
                     @foreach(\App\Models\MaterielTask::SUPPORTS(app()->getLocale()) as $key=>$value)
-                        @if(in_array($key, [1,2]))
+                        @if(in_array($key, [2, 3]))
                             @if(app()->getLocale() === 'en')
                                 <li><a href="{{ "/".$value['uri']."/" }}">{{$value['name']}}</a></li>
                             @else
@@ -159,10 +159,10 @@
             </div>
 
             <div>
-                <p class="footer-title">{{ \App\Models\MaterielTask::categoryName(app()->getLocale()) }}</p>
+                <p class="footer-title">{{ \App\Models\MaterielTask::resource(app()->getLocale()) }}</p>
                 <ul class="list-unstyled">
-                    @foreach($categories->take(4) as $category)
-                    <li><a href="{{ $category->url }}">{{ $category->name }}</a></li>
+                    @foreach($categories as $category)
+                        <li><a href="{{ $category->url }}">{{ $category->name }}</a></li>
                     @endforeach
                 </ul>
             </div>
@@ -171,7 +171,7 @@
                 <p class="footer-title">{{ \App\Models\MaterielTask::legal(app()->getLocale()) }}</p>
                 <ul class="list-unstyled">
                     @foreach(\App\Models\MaterielTask::SUPPORTS(app()->getLocale()) as $key=>$value)
-                        @if(in_array($key, [3,4]))
+                        @if(in_array($key, [4, 7]))
                             @if(app()->getLocale() === 'en')
                                 <li><a href="{{ "/".$value['uri']."/" }}">{{$value['name']}}</a></li>
                             @else
