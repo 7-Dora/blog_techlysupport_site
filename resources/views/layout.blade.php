@@ -139,7 +139,7 @@
         <div class="container message">
             <div>
                 <p class="footer-title">{{ config('app.name') }}</p>
-                <p>{{ \App\Models\MaterielTask::slogan(app()->getLocale()) }}</p>
+                <p>{{ \App\Models\MaterielTask::homeH1(app()->getLocale()) }}</p>
             </div>
 
             <div>

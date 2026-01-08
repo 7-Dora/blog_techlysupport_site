@@ -229,15 +229,15 @@ class MaterielTask extends Model
         return data_get($copyright, $locale, '');
     }
 
-    public static function slogan($locale) {
-        $copyright = [
-            'en'=>'All the How-To Answers You Need.',
-            'de'=>'Alle Anleitungen, die Sie brauchen.',
-            'fr'=>'Toutes les réponses pratiques dont vous avez besoin.',
-            'es'=>'Todas las respuestas prácticas que necesitas.'
-        ];
-        return data_get($copyright, $locale, '');
-    }
+//    public static function slogan($locale) {
+//        $copyright = [
+//            'en'=>'All the How-To Answers You Need.',
+//            'de'=>'Alle Anleitungen, die Sie brauchen.',
+//            'fr'=>'Toutes les réponses pratiques dont vous avez besoin.',
+//            'es'=>'Todas las respuestas prácticas que necesitas.'
+//        ];
+//        return data_get($copyright, $locale, '');
+//    }
 
     public static function homeH1($locale) {
         $homeH1 = [
