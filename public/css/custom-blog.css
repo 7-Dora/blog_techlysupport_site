@@ -200,6 +200,9 @@
 }
 
 /* ==================== 文章内容样式 ==================== */
+.article-content span{
+    font-weight: 700;
+}
 .article-content {
     font-size: 1.1rem;
     line-height: 1.8;

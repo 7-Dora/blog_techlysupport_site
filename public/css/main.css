@@ -296,7 +296,7 @@ a {
 
 /* ==================== Hero区域 ==================== */
 .hero-section {
-    /*background: var(--gradient-hero);*/
+    background: rgba(125, 192, 47, 0.12);
     padding: var(--spacing-2xl) 0;
     position: relative;
     overflow: hidden;

@@ -241,20 +241,20 @@ class MaterielTask extends Model
 
     public static function homeH1($locale) {
         $homeH1 = [
-            'en'=>'How Encyclopedia - All the How-To Answers You Need.',
-            'de'=>'How Encyclopedia - Alle Anleitungen, die Sie brauchen.',
-            'fr'=>'How Encyclopedia - Toutes les réponses pratiques dont vous avez besoin.',
-            'es'=>'How Encyclopedia - Todas las respuestas prácticas que necesitas.'
+            'en'=>'Trusted Answers for Your Tech Problems',
+            'de'=>'Verlässliche Antworten auf Ihre Technikprobleme',
+            'fr'=>'Des réponses fiables à vos problèmes technologiques',
+            'es'=>'Respuestas confiables para tus problemas tecnológicos'
         ];
         return data_get($homeH1, $locale, '');
     }
 
     public static function heroDesc($locale) {
         $heroDesc = [
-            'en'=>'Clear, step-by-step guides, practical tips, and everyday knowledge for life skills, common problems, and useful how-to topics, all in one place.',
-            'de'=>'Klare Schritt-für-Schritt-Anleitungen, praktische Tipps und Alltagswissen zu Lebenskompetenzen, häufigen Problemen und nützlichen How-to-Themen – alles an einem Ort.',
-            'fr'=>'.Des guides clairs, étape par étape, des conseils pratiques et des connaissances du quotidien pour les compétences de la vie, les problèmes courants et des sujets pratiques, le tout en un seul endroit.',
-            'es'=>'Guías claras paso a paso, consejos prácticos y conocimientos cotidianos sobre habilidades para la vida, problemas comunes y temas útiles de tipo “how-to”, todo en un solo lugar.'
+            'en'=>'Easy-to-follow guides that help you troubleshoot everyday tech problems without confusion or unnecessary jargon.',
+            'de'=>'Leicht verständliche Anleitungen, die dir helfen, alltägliche technische Probleme ohne Verwirrung oder unnötigen Fachjargon zu lösen.',
+            'fr'=>'Des guides faciles à suivre qui vous aident à résoudre les problèmes technologiques du quotidien, sans confusion ni jargon inutile.',
+            'es'=>'Guías fáciles de seguir que te ayudan a resolver problemas tecnológicos cotidianos sin confusión ni jerga innecesaria.'
         ];
         return data_get($heroDesc, $locale, '');
     }

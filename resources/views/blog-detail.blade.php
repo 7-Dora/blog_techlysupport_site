@@ -4,7 +4,7 @@
 @section('description', $blog->summary)
 
 @push('styles')
-    <link rel="stylesheet" href="/css/custom-blog.css?v=1.8">
+    <link rel="stylesheet" href="/css/custom-blog.css?v=1.9">
 @endpush
 
 @section('content')

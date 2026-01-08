@@ -11,7 +11,7 @@
     <link rel="canonical" href="{{ url()->current() }}/">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/all.min.css?v=1.1">
-    <link rel="stylesheet" href="/css/main.css?v=1.6">
+    <link rel="stylesheet" href="/css/main.css?v=1.7">
 
     @if(!empty($alternate_tag)) {!! $alternate_tag !!} @endif
     @if(!empty($gtag)){!! $gtag !!}@endif
@@ -42,7 +42,7 @@
             "@type": "Article",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "{{request()->url()}}"
+                "@id": "{{request()->url()}}/"
             },
             "headline": "{!! str_replace("\"", "\\\"", $blog->title) !!}",
             "datePublished": "{{date("Y-m-d\TH:i:sP", strtotime($blog->published_at))}}",
