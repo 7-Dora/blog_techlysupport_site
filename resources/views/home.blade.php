@@ -30,16 +30,16 @@
             @php $firstPost = $hotBlogs->first(); @endphp
             <div class="blog-card featured-card">
                 <div class="blog-card-img-wrapper">
-                    <img src="{{ $firstPost->head_img }}" alt="{{ $firstPost->head_img_alt ?? $firstPost->title }}">
+                    <img src="{{ $firstPost->head_img }}" alt="{{ $firstPost->head_img_alt }}">
                     <div class="blog-card-overlay">
                         <div class="category category-1">
                             <a href="{{ $firstPost->category->url }}"><span class="blog-card-badge">{{ $firstPost->category_name }}</span></a>
                             <small class="card-date">{{ $firstPost->published_at->format('d M Y') }}</small>
                         </div>
                         <a href="{{ $firstPost->url }}" class="text-decoration-none">
-                            <p class="h4 mb-2 category-article-title">{{ $firstPost->title }}</p>
+                            <p class="h4 mb-2 category-article-title">{!! $firstPost->title !!}</p>
                         </a>
-                        <p class="small mb-0">{{ $firstPost->summary }}</p>
+                        <p class="small mb-0">{!! $firstPost->summary !!}</p>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                             <small class="text-muted card-date">{{ $hotBlog->published_at->format('d M Y') }}</small>
                         </div>
                         <a href="{{ $hotBlog->url }}" class="text-decoration-none">
-                            <p class="h6 mb-1 little-card-desc">{{ $hotBlog->title }}</p>
+                            <p class="h6 mb-1 little-card-desc">{!! $hotBlog->title !!}</p>
                         </a>
 
                     </div>
@@ -85,16 +85,16 @@
                     <div class="col-lg-6 mb-4">
                         <div class="blog-card">
                             <div class="blog-card-img-wrapper">
-                                <img src="{{ $blog->head_img }}" alt="{{ $blog->head_img_alt ?? $blog->title }}">
+                                <img src="{{ $blog->head_img }}" alt="{{ $blog->head_img_alt }}">
                                 <div class="blog-card-overlay">
                                     <div class="category">
                                         <a href="{{ $blog->category->url }}"><span class="blog-card-badge">{{ $blog->category_name }}</span></a>
                                         <small class="card-date">{{ $blog->published_at->format('d M Y') }}</small>
                                     </div>
                                     <a href="{{ $blog->url }}" class="text-decoration-none">
-                                        <p class="h5 mb-2 category-article-title">{{ $blog->title }}</p>
+                                        <p class="h5 mb-2 category-article-title">{!! $blog->title !!}</p>
                                     </a>
-                                    <p class="small mb-0">{{ $blog->summary }}</p>
+                                    <p class="small mb-0">{!! $blog->summary !!}</p>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <article class="blog-card">
                             <div class="blog-card-img-wrapper">
-                                <img src="{{ $blog->head_img }}" alt="{{ $blog->head_img_alt ?? $blog->title }}" itemprop="image">
+                                <img src="{{ $blog->head_img }}" alt="{{ $blog->head_img_alt }}" itemprop="image">
                             </div>
                             <div class="blog-card-body">
                                 <div class="category">
@@ -116,9 +116,9 @@
                                     <small class="little-card-date">{{ $blog->published_at->format('d M Y') }}</small>
                                 </div>
                                 <a href="{{ $blog->url }}" class="text-decoration-none">
-                                    <p class="blog-card-title" itemprop="headline">{{ $blog->title }}</p>
+                                    <p class="blog-card-title" itemprop="headline">{!! $blog->title !!}</p>
                                 </a>
-                                <p class="blog-card-text" itemprop="description">{{ $blog->summary }}</p>
+                                <p class="blog-card-text" itemprop="description">{!! $blog->summary !!}</p>
                             </div>
                         </article>
                     </div>
@@ -133,16 +133,16 @@
                     @php $firstPost = $categoryBlogs->first(); @endphp
                     <div class="blog-card featured-card">
                         <div class="blog-card-img-wrapper">
-                            <img src="{{ $firstPost->head_img }}" alt="{{ $firstPost->head_img_alt ?? $firstPost->title }}">
+                            <img src="{{ $firstPost->head_img }}" alt="{{ $firstPost->head_img_alt }}">
                             <div class="blog-card-overlay">
                                 <div class="category category-1">
                                     <a href="{{ $firstPost->category->url }}"><span class="blog-card-badge">{{ $firstPost->category_name }}</span></a>
                                     <small class="card-date">{{ $firstPost->published_at->format('d M Y') }}</small>
                                 </div>
                                 <a href="{{ $firstPost->url }}" class="text-decoration-none">
-                                    <p class="h4 mb-2 category-article-title">{{ $firstPost->title }}</p>
+                                    <p class="h4 mb-2 category-article-title">{!! $firstPost->title !!}</p>
                                 </a>
-                                <p class="small mb-0">{{ $firstPost->summary }}</p>
+                                <p class="small mb-0">{!! $firstPost->summary !!}</p>
                             </div>
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                                         <small class="text-muted card-date">{{ $hotBlog->published_at->format('d M Y') }}</small>
                                     </div>
                                     <a href="{{ $hotBlog->url }}" class="text-decoration-none">
-                                        <p class="h6 mb-1 little-card-desc">{{ $hotBlog->title }}</p>
+                                        <p class="h6 mb-1 little-card-desc">{!! $hotBlog->title !!}</p>
                                     </a>
 
                                 </div>
@@ -186,7 +186,7 @@
                         <small class="text-muted">{{ $latestBlog->published_at->format('d M Y') }}</small>
                     </div>
                     <a href="{{ $latestBlog->url }}" class="text-decoration-none">
-                    <div class="h6 mb-0">{{ $latestBlog->title }}</div>
+                    <div class="h6 mb-0">{!! $latestBlog->title !!}</div>
                     </a>
                 </div>
             </div>

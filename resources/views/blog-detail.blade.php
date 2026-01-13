@@ -15,7 +15,7 @@
         &gt;
         <a href="{{ $blog->category ? $blog->category->url : '#' }}">{{ $blog->category_name }}</a>
         &gt;
-        <span>{{ $blog->title }}</span>
+        <span>{!! $blog->title !!}</span>
     </nav>
 </div>
 <div class="container mt-4">
@@ -23,7 +23,7 @@
         {{-- Article Header --}}
         <div class="col-lg-9 offset-3">
             <header class="mb-4">
-                <h1 class="article-title">{{ $blog->title }}</h1>
+                <h1 class="article-title">{!! $blog->title !!}</h1>
 
                 <div class="article-meta">
                     <span class="meta-item">
@@ -55,10 +55,10 @@
                                     <li class="sidebar-item">
                                         <a href="{{ $popularBlog->url }}" class="d-flex align-items-start">
                                             <img src="{{ $popularBlog->head_img }}"
-                                                 alt="{{ $popularBlog->head_img_alt ?? $popularBlog->title }}"
+                                                 alt="{{ $popularBlog->head_img_alt }}"
                                                  class="sidebar-thumb me-2">
                                             <div class="flex-grow-1">
-                                                <p class="sidebar-post-title">{{ $popularBlog->title }}</p>
+                                                <p class="sidebar-post-title">{!! $popularBlog->title !!}</p>
                                             </div>
                                         </a>
                                     </li>
@@ -104,9 +104,9 @@
                                     </div>
                                     <div class="blog-card-body">
                                         <a href="{{ $relatedBlog->url }}" class="text-decoration-none">
-                                            <p class="blog-card-title">{{ $relatedBlog->title }}</p>
+                                            <p class="blog-card-title">{!! $relatedBlog->title !!}</p>
                                         </a>
-                                        <p class="blog-card-text">{{ $relatedBlog->summary }}</p>
+                                        <p class="blog-card-text">{!! $relatedBlog->summary !!}</p>
                                     </div>
                                 </article>
                             </div>

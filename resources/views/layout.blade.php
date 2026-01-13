@@ -183,7 +183,7 @@
             </div>
         </div>
         <div class="footer-bottom container">
-            <p>&copy; {{ date('Y') }} {{ config('app.domain')}}. All rights reserved.</p>
+            <p>&copy; {{ date('Y') }} {{ config('app.domain')}}. {{ \App\Models\MaterielTask::copyright(app()->getLocale()) }}</p>
         </div>
     </footer>
 

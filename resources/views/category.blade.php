@@ -18,7 +18,7 @@
 {{-- Category Header --}}
 <div class="hero-section py-5">
     <div class="container text-center categroy-summary">
-        <h1>{{ $categoryInfo->name }}</h1>
+        <h1>{!! $categoryInfo->name !!}</h1>
         <p>{!! $seoInfo->content !!}</p>
     </div>
 </div>
@@ -34,7 +34,7 @@
                 @if($firstPost)
                 <div class="blog-card featured-card">
                     <div class="blog-card-img-wrapper">
-                        <img src="{{ $firstPost->head_img }}" alt="{{ $firstPost->head_img_alt ?? $firstPost->title }}">
+                        <img src="{{ $firstPost->head_img }}" alt="{{ $firstPost->head_img_alt }}">
                         <div class="blog-card-overlay">
                             <div class="category">
                                 <span class="meta-item">
@@ -43,15 +43,15 @@
                                 </span>
                                 <span class="meta-item">
                                     <i class="far fa-calendar"></i> {{ \App\Models\MaterielTask::detailPublished(app()->getLocale()) }}
-                                    <time itemprop="datePublished" datetime="{{ $firstPost->published_at->toIso8601String() }}">
+                                    <time>
                                         {{ $firstPost->published_at->format('Y-m-d') }}
                                     </time>
                                 </span>
                             </div>
                             <a href="{{ $firstPost->url }}" class="text-decoration-none">
-                                <p class="h4 mb-2 category-article-title">{{ $firstPost->title }}</p>
+                                <p class="h4 mb-2 category-article-title">{!! $firstPost->title !!}</p>
                             </a>
-                            <p class="small mb-0">{{ $firstPost->summary }}</p>
+                            <p class="small mb-0">{!! $firstPost->summary !!}</p>
                         </div>
                     </div>
                 </div>
@@ -72,13 +72,13 @@
                                     </span>
                                     <span class="meta-item">
                                         <i class="far fa-calendar"></i> {{ \App\Models\MaterielTask::detailPublished(app()->getLocale()) }}
-                                        <time itemprop="datePublished" datetime="{{ $hotBlog->published_at->toIso8601String() }}">
+                                        <time>
                                             {{ $hotBlog->published_at->format('Y-m-d') }}
                                         </time>
                                     </span>
                                 </div>
                                 <a href="{{ $hotBlog->url }}" class="text-decoration-none">
-                                    <p class="h6 mb-1 little-card-desc">{{ $hotBlog->title }}</p>
+                                    <p class="h6 mb-1 little-card-desc">{!! $hotBlog->title !!}</p>
                                 </a>
                             </div>
                         </div>
