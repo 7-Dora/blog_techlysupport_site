@@ -81,7 +81,7 @@
                     <div class="faq-list">
                         @foreach($blog->faq as $faq)
                         <div class="faq-item">
-                            <h3 class="faq-question">{{ $faq['question'] }}</h3>
+                            <h3 class="faq-question">{!! $faq['question'] !!}</h3>
                             <div class="faq-answer">
                                 <div>{!! $faq['answer'] !!}</div>
                             </div>
