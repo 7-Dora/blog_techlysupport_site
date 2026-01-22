@@ -20,7 +20,8 @@ class BlogController extends Controller
         $categoryInfo = MaterielTask::byLanguage($this->locale)->where('type', MaterielTask::TYPE_CATEGORY)->get();
 
         // 热门文章
-        $hotBlogs = Blog::active()
+        $hotBlogs = Blog::with('category')
+            ->active()
             ->byLanguage($this->locale)
             ->whereIn('category_id', $categoryIds)
             ->select('id', 'title', 'title_uniq', 'head_img', 'head_img_alt', 'summary', 'category_id', 'volume', 'category_name', 'published_at', 'language')
@@ -29,7 +30,8 @@ class BlogController extends Controller
             ->get();
 
         // 最新文章：取前5
-        $latestBlogs = Blog::active()
+        $latestBlogs = Blog::with('category')
+            ->active()
             ->byLanguage($this->locale)
             ->whereIn('category_id', $categoryIds)
             ->select('id', 'title', 'title_uniq', 'head_img', 'head_img_alt', 'summary', 'category_id', 'volume', 'category_name', 'published_at', 'language')
@@ -37,7 +39,8 @@ class BlogController extends Controller
             ->limit(6) // 限制查询总数
             ->get();
 
-        $blogsFlat = Blog::active()
+        $blogsFlat = Blog::with('category')
+            ->active()
             ->byLanguage($this->locale)
             ->whereIn('category_id', $categoryIds)
             ->whereRaw('(
@@ -82,7 +85,8 @@ class BlogController extends Controller
             return response()->view('errors.404', ['categories' => $this->categories], 404);
         }
 
-        $hotBlogs = Blog::active()
+        $hotBlogs = Blog::with('category')
+            ->active()
             ->byLanguage($this->locale)
             ->byCategory($categoryInfo->id)
             ->select('id', 'title', 'title_uniq', 'head_img', 'head_img_alt', 'summary', 'category_id', 'volume',
@@ -92,7 +96,8 @@ class BlogController extends Controller
             ->get();
 
         // 获取分类下的文章（分页）
-        $blogs = Blog::active()
+        $blogs = Blog::with('category')
+            ->active()
             ->byLanguage($this->locale)
             ->byCategory($categoryInfo->id)
             ->orderBy('published_at', 'desc')
@@ -137,7 +142,8 @@ class BlogController extends Controller
         }
 
         // 获取文章
-        $blog = Blog::active()
+        $blog = Blog::with('category')
+            ->active()
             ->byLanguage($this->locale)
             ->where('title_uniq', $title_uniq)
             ->first();
@@ -149,7 +155,8 @@ class BlogController extends Controller
 //        $blog->incrementVolume();
 
         // 获取热门文章（侧边栏）
-        $popularBlogs = Blog::active()
+        $popularBlogs = Blog::with('category')
+            ->active()
             ->byLanguage($this->locale)
             ->where('id', '!=', $blog->id)
             ->orderBy('volume', 'desc')
@@ -157,7 +164,8 @@ class BlogController extends Controller
             ->get();
 
         // 获取相关文章（同分类）
-        $relatedBlogs = Blog::active()
+        $relatedBlogs = Blog::with('category')
+            ->active()
             ->byLanguage($this->locale)
             ->byCategory($blog->category_id)
             ->where('id', '!=', $blog->id)
