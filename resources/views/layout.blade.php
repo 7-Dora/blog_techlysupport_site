@@ -44,10 +44,10 @@
                 "@type": "WebPage",
                 "@id": "{{request()->url()}}/"
             },
-            "headline": "{!! str_replace("\"", "\\\"", $blog->title) !!}",
+            "headline": {!! json_encode(html_entity_decode($blog->title, ENT_QUOTES), JSON_UNESCAPED_UNICODE) !!},
             "datePublished": "{{date("Y-m-d\TH:i:sP", strtotime($blog->published_at))}}",
             "dateModified": "{{date("Y-m-d\TH:i:sP", strtotime($blog->published_at))}}",
-            "description": "{!! str_replace("\"", "\\\"", $blog->summary) !!}",
+            "description": {!! json_encode(html_entity_decode($blog->summary, ENT_QUOTES), JSON_UNESCAPED_UNICODE) !!},
             "image": {
                 "@type": "ImageObject",
                 "url": "{{request()->root().$blog->head_img}}",
@@ -59,20 +59,20 @@
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
-                @foreach($blog->faq as $faq)
+               @foreach($blog->faq as $faq)
                 [
                    {
                        "@type": "Question",
-                       "name": "{!! str_replace("\"", "\\\"", $faq['question']) !!}",
-                           "acceptedAnswer": [
-                               {
-                                   "@type": "Answer",
-                                   "text": "{!! str_replace("\"", "\\\"", $faq['answer']) !!}"
-                               }
-                           ]
-                       }
-                    ]
-                    @if(!$loop->last),@endif
+                       "name": {!! json_encode(html_entity_decode($faq['question'], ENT_QUOTES), JSON_UNESCAPED_UNICODE) !!},
+                       "acceptedAnswer": [
+                           {
+                               "@type": "Answer",
+                               "text": {!! json_encode(html_entity_decode($faq['answer'], ENT_QUOTES), JSON_UNESCAPED_UNICODE) !!}
+                                }
+                            ]
+                   }
+                ]
+                @if(!$loop->last),@endif
             @endforeach
             ]
         }
