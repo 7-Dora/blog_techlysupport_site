@@ -35,7 +35,7 @@
     </script>
     @endif
     @if (isset($blog) && $blog and in_array(\Illuminate\Support\Facades\Route::currentRouteName(), ['blog', 'blog.show', 'blog.show.localized']))
-        <script type="application/ld+json">
+    <script type="application/ld+json">
     [
         {
             "@context": "https://schema.org",
@@ -46,7 +46,7 @@
             },
             "headline": {!! json_encode(html_entity_decode($blog->title, ENT_QUOTES), JSON_UNESCAPED_UNICODE) !!},
             "datePublished": "{{date("Y-m-d\TH:i:sP", strtotime($blog->published_at))}}",
-            "dateModified": "{{date("Y-m-d\TH:i:sP", strtotime($blog->published_at))}}",
+            "dateModified": "{{date("Y-m-d\TH:i:sP", strtotime($blog->update_time))}}",
             "description": {!! json_encode(html_entity_decode($blog->summary, ENT_QUOTES), JSON_UNESCAPED_UNICODE) !!},
             "image": {
                 "@type": "ImageObject",
@@ -78,7 +78,7 @@
         }
         @endif
             ]
-</script>
+    </script>
     @endif
     @stack('styles')
 </head>

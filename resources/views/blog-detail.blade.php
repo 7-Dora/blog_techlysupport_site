@@ -33,7 +33,7 @@
                     <span class="meta-item">
                         <i class="far fa-calendar"></i> {{ \App\Models\MaterielTask::detailPublished(app()->getLocale()) }}
                         <time>
-                            {{ $blog->published_at->format('Y-m-d') }}
+                            {{ $blog->update_time->format('Y-m-d') }}
                         </time>
                     </span>
                     <span class="meta-item">
