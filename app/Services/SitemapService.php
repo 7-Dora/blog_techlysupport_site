@@ -54,15 +54,14 @@ class SitemapService
 
     protected function _createIndexSitemapContent() :string
     {
-        $this->domain = "https://www.".config('app.domain');
         $content = "<?xml version='1.0' encoding='UTF-8'?>\n";
-        $content .= "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.google.com/schemas/sitemap/0.84 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd\">\n";
+        $content .= "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.google.com/schemas/sitemap/0.84 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd\">\n";
         foreach ($this->language as $lang) {
             $time = date("Y-m-d\TH:i:sP", time());
             $url = rtrim($this->domain, '/'). '/' . $lang . '-sitemap.xml';
-            $content .= "<url>\n<loc>" . $url . "</loc>\n<lastmod>" . $time . "</lastmod>\n</url>\n";
+            $content .= "<sitemap>\n<loc>" . $url . "</loc>\n<lastmod>" . $time . "</lastmod>\n</sitemap>\n";
         }
-        $content .= "\n</urlset>";
+        $content .= "\n</sitemapindex>";
         return $content;
     }
 
