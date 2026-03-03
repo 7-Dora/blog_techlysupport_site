@@ -54,6 +54,7 @@ class SitemapService
 
     protected function _createIndexSitemapContent() :string
     {
+        $this->domain = "https://www.".config('app.domain');
         $content = "<?xml version='1.0' encoding='UTF-8'?>\n";
         $content .= "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.google.com/schemas/sitemap/0.84 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd\">\n";
         foreach ($this->language as $lang) {
