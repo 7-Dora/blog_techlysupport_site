@@ -9,12 +9,12 @@
                     <div class="category right-card-2">
                         <span class="meta-item">
                             <i class="far fa-user"></i> {{ \App\Models\MaterielTask::by(app()->getLocale()) }}
-                            <span>{{ $hotBlog->author }}</span>
+                            <span>{{ $blog->author }}</span>
                         </span>
                         <span class="meta-item">
                             <i class="far fa-calendar"></i> {{ \App\Models\MaterielTask::detailPublished(app()->getLocale()) }}
                             <time>
-                                {{ $hotBlog->published_at->format('Y-m-d') }}
+                                {{ $blog->published_at->format('Y-m-d') }}
                             </time>
                         </span>
                     </div>
