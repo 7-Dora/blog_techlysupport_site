@@ -1,3 +1,7 @@
 User-agent: *
 
 Sitemap: https://www.techlysupport.com/sitemap.xml
+Sitemap: https://www.techlysupport.com/en-sitemap.xml
+Sitemap: https://www.techlysupport.com/de-sitemap.xml
+Sitemap: https://www.techlysupport.com/fr-sitemap.xml
+Sitemap: https://www.techlysupport.com/es-sitemap.xml
