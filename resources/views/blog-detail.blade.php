@@ -120,3 +120,7 @@
 </div>
 @endsection
 
+
+@push('scripts')
+<script src="{{ $theme->js('blog.js') }}" defer></script>
+@endpush

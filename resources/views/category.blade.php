@@ -157,5 +157,5 @@
 </div>
 @endsection
 @push('scripts')
-<script src="/js/category.js" defer></script>
+<script src="{{ $theme->js('category.js') }}" defer></script>
 @endpush
